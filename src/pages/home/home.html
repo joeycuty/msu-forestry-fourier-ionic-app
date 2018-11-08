@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Vibrations App
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+ 
+    <ion-content class="tutorial-page">
+
+        <ion-slides pager>
+            <ion-slide *ngFor="let slide of slides">
+                <ion-toolbar>
+                    <ion-buttons end>
+                        <button ion-button color="secondary" (click)="skipTut()">Skip</button>
+                    </ion-buttons>
+                </ion-toolbar>
+                <img [src]="slide.image" class="slide-image" />
+                <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+                <p [innerHTML]="slide.description"></p>
+            </ion-slide>
+            <ion-slide>
+                <ion-toolbar>
+                </ion-toolbar>
+                <img src="" class="slide-image" />
+                <h2 class="slide-title">Ready to Meaure?</h2>
+                <button (click)="skipTut()" ion-button large clear icon-right color="primary">
+                    Continue
+                    <ion-icon name="arrow-forward"></ion-icon>
+                </button>
+            </ion-slide>
+        </ion-slides>
+    </ion-content>
+
+</ion-content>
